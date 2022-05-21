@@ -2,12 +2,12 @@ import { RFValue } from 'react-native-responsive-fontsize'
 import styled from 'styled-components/native'
 
 interface TypeProps {
-  type: "up" | "down" | "total";
+  type: "arrow-up-circle" | "arrow-down-circle" | "dollar-sign"
 }
 
 export const Container = styled.View<TypeProps>`
   background-color: ${({ theme, type }) =>
-  type === "total" ?  theme.colors.secondary : theme.colors.shape};
+  type === "dollar-sign" ?  theme.colors.secondary : theme.colors.shape};
 
   width: ${RFValue(300)}px;
   border-radius: 5px;
@@ -27,7 +27,7 @@ export const Title = styled.Text<TypeProps>`
   font-size: ${RFValue(14)}px;
 
   color: ${({ theme, type }) =>
-  type === "total" ?  theme.colors.shape : theme.colors.text_dark};
+  type === "dollar-sign" ?  theme.colors.shape : theme.colors.text_dark};
 `
 
 export const Footer = styled.View``
@@ -37,7 +37,7 @@ export const Amount = styled.Text<TypeProps>`
   font-size: ${RFValue(32)}px;
 
   color: ${({ theme, type }) =>
-  type === "total" ?  theme.colors.shape : theme.colors.text_dark};
+  type === "dollar-sign" ?  theme.colors.shape : theme.colors.text_dark};
 
   margin-top: 38px;
 `
@@ -47,6 +47,6 @@ export const LastTransaction = styled.Text<TypeProps>`
   font-size: ${RFValue(12)}px;
 
   color: ${({ theme, type }) =>
-  type === "total" ?  theme.colors.shape : theme.colors.text};
+  type === "dollar-sign" ?  theme.colors.shape : theme.colors.text};
 `
 

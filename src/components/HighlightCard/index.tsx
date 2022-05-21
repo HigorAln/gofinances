@@ -13,13 +13,7 @@ interface Props {
   title: string;
   amount: string;
   lastTransaction: string;
-  type: "up" | "down" | "total"
-}
-
-const icon = {
-  up: "arrow-up-circle",
-  down: "arrow-down-circle",
-  total: "dollar-sign"
+  type: "arrow-up-circle" | "arrow-down-circle" | "dollar-sign"
 }
 
 export function HighlightCard({
@@ -32,7 +26,7 @@ export function HighlightCard({
     <Container type={type}>
       <Header>
         <Title type={type}>{title}</Title>
-        <Feather name={icon[type]} size={40} color={type === "up" ? "#12a454" : type === "down" ? "#E83F5B" : "#ffffff" } />
+        <Feather name={type} size={40} color={type === "arrow-up-circle" ? "#12a454" : type === "arrow-down-circle" ? "#E83F5B" : "#ffffff" } />
       </Header>
 
       <Footer>

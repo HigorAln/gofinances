@@ -23,7 +23,7 @@ export function Register() {
           <Input placeholder='Nome' />
           <Input placeholder='Preco' />
 
-          <TransactionType type="up" title="income" />
+          <TransactionType type="arrow-up-circle" title="income" />
        </Fields>
 
         <Button title="Enviar"/>

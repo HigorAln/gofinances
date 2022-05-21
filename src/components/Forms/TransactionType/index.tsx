@@ -3,26 +3,20 @@ import React from 'react';
 import { Container, Title } from './styles';
 import { TouchableOpacityProps } from 'react-native';
 
-interface Porps  extends TouchableOpacityProps{
+interface Props  extends TouchableOpacityProps{
   title: string;
-  type: "up" | "down";
-}
-
-const icons = {
-  up: "arrow-up-circle",
-  down: "arrow-down-circle"
+  type: "arrow-up-circle" | "arrow-down-circle";
 }
 
 export function TransactionType({
   title,
   type,
   ...rest
-}: Porps) {
+}: Props) {
   return (
     <Container {...rest}>
-      <Feather name={icons[type]} size={24} style={{marginRight: "12px" }}/>
+      <Feather name={type} size={24} />
 
-      
       <Title>
         {title}
       </Title>

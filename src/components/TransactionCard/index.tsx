@@ -12,7 +12,7 @@ import {
 
 interface Category {
   name: string;
-  icon: string;
+  icon: "dollar-sign" | "coffee" | "shopping-bag"
 }
 
 export interface TransactionsCardProps {

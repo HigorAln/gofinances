@@ -1,5 +1,6 @@
 import { Feather } from '@expo/vector-icons';
 import React from 'react';
+import { categories } from '../../utils/categories';
 import { 
   Container,
   Title,
@@ -10,16 +11,11 @@ import {
   Date,
  } from './styles';
 
-interface Category {
-  name: string;
-  icon: "dollar-sign" | "coffee" | "shopping-bag"
-}
-
 export interface TransactionsCardProps {
   type: "positive" | "negative";
-  title: string;
+  name: string;
   amount: string;
-  category: Category;
+  category: string;
   date: string;
 }
 
@@ -28,9 +24,11 @@ interface Props {
 }
 
 export function TransactionCard({ data }: Props) {
+  const category = categories.filter(item => item.key === data.category)[0];
+
   return (
     <Container>
-      <Title>{data.title}</Title>
+      <Title>{data.name}</Title>
 
       <Amount type={data.type === "positive"}>
         {data.type === "negative" && "- "}
@@ -39,9 +37,9 @@ export function TransactionCard({ data }: Props) {
 
       <Footer>
         <Category>
-          <Feather name={data.category.icon} size={20} color={"#969CB2"}/>
+          <Feather name={category.icon as any} size={20} color={"#969CB2"}/>
 
-          <CategoryName>{data.category.name}</CategoryName>
+          <CategoryName>{category.name}</CategoryName>
         </Category>
 
         <Date>{data.date}</Date>
